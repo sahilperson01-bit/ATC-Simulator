@@ -1,0 +1,362 @@
+# VIDP - Indira Gandhi International Airport, New Delhi, India
+# Created for Endless ATC custom airport import
+# References:
+#   - AIP India (AAI eAIP) - SIDs/STARs/ILS procedures
+#   - flightplandatabase.com/airport/VIDP - runway/navaid data
+#   - Wikipedia - runway dimensions
+#   - Jeppesen charts VIDP (historic/public references)
+#
+# Runways: 09/27, 10/28, 11L/29R, 11R/29L
+# Primary ops: 11s and 29s (longest runways); 10/28 secondary; 09/27 shortest
+# Westerly flow: land 27/28/29, depart 27/28/29
+# Easterly flow: land 09/10/11, depart 09/10/11
+#
+# Magnetic variation: ~1.7 deg East (runway headings adjusted accordingly)
+
+[airport]
+name = Delhi Indira Gandhi Intl
+code = VIDP
+radio = Delhi
+position = 28.5585, 77.0979
+# Transition altitude India: 14000 ft (FL140)
+transitionalt = 14000
+transitionlevel = 150
+# Radar ceiling for TRACON area ~150nm
+magneticvar = 1.7
+# Elevation 778 ft
+elevation = 778
+
+[airspace]
+# VIDP TMA roughly covers 100nm radius
+radius = 100
+# Ceiling at FL245 for approach control
+ceiling = 24500
+# Floor (ground)
+floor = 0
+
+# Airspace boundary polygon (approx Delhi TMA)
+boundary =
+  28.55, 76.10,
+  29.55, 76.10,
+  30.00, 77.10,
+  29.55, 78.10,
+  28.55, 78.10,
+  27.55, 77.50,
+  27.55, 76.50,
+  28.55, 76.10
+
+[runways]
+# Format: identifier, name, position (lat,lon of threshold), true_heading, <length_m>, <displaced_m>, <displaced2_m>, <elevation>, <glideslope>, <localizer_true_hdg>, <glideslope2>, <localizer2_true_hdg>, <beaconname, dist_nm>, <tower_freq>
+# RWY 09/27
+09, 09, 28.5452, 77.0511, 91.44, 2810, 0, 152, 778, 3.0, 91.45, , , , 118.1
+27, 27, 28.5452, 77.0979, 271.46, 2810, 152, 0, 778, 3.0, 271.45, , , , 118.1
+
+# RWY 10/28
+10, 10, 28.5540, 77.0405, 104.69, 3813, 0, 0, 778, 3.0, 104.70, , , , 118.1
+28, 28, 28.5540, 77.1120, 284.71, 3813, 0, 0, 778, 3.0, 284.70, , , , 118.1
+
+# RWY 11L/29R
+11, 11L, 28.5600, 77.0310, 103.69, 4422, 642, 0, 778, 3.0, 103.71, , , , 118.1
+29, 29R, 28.5600, 77.1250, 283.72, 4422, 0, 1457, 778, 3.0, 283.71, , , , 118.1
+
+[ils]
+# Format: runway_id, frequency, identifier
+09, 108.50, IDIA
+27, 110.50, IDLH
+10, 109.50, IDEL
+28, 110.30, IPLM
+11, 111.30, IDMR
+29, 110.90, IDGM
+
+[waypoints]
+# Key fix coordinates (decimal degrees, lat, lon)
+# Entry/Exit fixes
+SAPLO = 28.9167, 76.5333   # West entry fix (inbound from west/northwest)
+BAVOX = 29.2333, 77.5167   # North fix
+POSIG = 28.2167, 77.7833   # Southeast fix
+SIBAD = 28.0333, 76.8000   # South fix
+AKBAN = 29.1167, 76.8333   # NW fix (secondary entry)
+VEMOX = 28.8000, 77.9167   # East/NE fix
+RIKMA = 27.8500, 77.3833   # South/SW fix
+LOTID = 28.0167, 77.8667   # SE fix
+DEGOM = 28.9167, 76.3167   # West fix
+ALIJA = 28.3167, 76.9833   # Departure fix (west departures)
+GOPNU = 28.6833, 76.7333   # NW departure
+LOSDO = 28.7500, 77.4500   # NE departure
+KABGU = 28.1833, 77.6833   # SE departure
+NUBGU = 28.2000, 76.6167   # SW departure
+ITBAN = 29.0333, 76.5000   # NW departure (LOSDO transition)
+AKELA = 28.4500, 76.4167   # West departure
+# Intermediate approach fixes
+FS711 = 28.5500, 77.3500   # STAR merge fix (east approaches)
+FS811 = 28.5500, 77.3333   # STAR merge fix (east approaches, alt)
+FN911 = 28.5600, 76.7500   # STAR merge fix (west approaches)
+FN611 = 28.5600, 76.7333   # STAR merge fix (west approaches, alt)
+SAM   = 28.4500, 76.9333   # SAM DVOR (SSB old name), Delhi approach
+DPN   = 28.5917, 77.1167   # Palam NDB area fix
+# ILS final approach fixes (approximate - 11nm from thresholds)
+IDMR  = 28.5600, 77.3600   # ILS 11L FAF area
+IDGM  = 28.5600, 77.3700   # ILS 29R FAF area
+IDEL  = 28.5540, 77.3400   # ILS 10 FAF area
+IPLM  = 28.5540, 76.8800   # ILS 28 FAF area
+IDIA  = 28.5452, 77.3300   # ILS 09 FAF area
+IDLH  = 28.5452, 76.8900   # ILS 27 FAF area
+
+[navaids]
+# DVOR/DME
+DPN, 116.10, 28.5917, 77.1167    # Palam DVOR
+DIG, 114.60, 28.5333, 76.9833    # Delhi DVOR
+SKA, 117.20, 27.8500, 77.0167    # Safdarjung DVOR (area)
+
+[airlines]
+# Format: callsign, type, frequency (arrivals per hour approx), <pronunciation>
+# Indian carriers
+AIC, A320, 8                 # Air India
+IGO, A320, 8                 # IndiGo
+SEJ, A320, 5                 # SpiceJet
+AXB, A320, 4                 # Air India Express
+GOW, A320, 4                 # Go First / Go Air
+VTI, A320, 3                 # Vistara
+AKJ, A320, 2                 # Akasa Air
+# International carriers (major)
+BAW, B777, 2                 # British Airways
+DLH, A340, 2                 # Lufthansa
+UAE, B777, 3                 # Emirates
+QTR, B777, 2                 # Qatar Airways
+ETD, B787, 2                 # Etihad
+KLM, B777, 2                 # KLM
+AFR, A380, 1                 # Air France
+SIA, B777, 2                 # Singapore Airlines
+CPA, B777, 1                 # Cathay Pacific
+THA, B777, 1                 # Thai Airways
+MAS, A330, 1                 # Malaysia Airlines
+JAL, B787, 1                 # Japan Airlines
+ANA, B787, 1                 # All Nippon Airways
+# Cargo
+FDX, B777, 1                 # FedEx
+DHL, B757, 1                 # DHL
+
+[configurations]
+# Westerly flow (primary - headwinds from W/NW common in summer, fog ops)
+# Land on 28 and 29R; Depart on 28 and 29R
+config = west
+  runways = 28 arr, 29 arr, 28 dep, 29 dep
+
+# Easterly flow
+# Land on 10 and 11L; Depart on 10 and 11L
+config = east
+  runways = 10 arr, 11 arr, 10 dep, 11 dep
+
+# Mixed/all runways (high traffic mode)
+config = allrwys
+  runways = 09 arr, 10 arr, 11 arr, 27 dep, 28 dep, 29 dep
+
+[sids]
+# WESTERLY DEPARTURES (RWY 28/29)
+# -------------------------------------------------------
+# SAPLO (West/NW) departures from 28/29
+sid = SAPLO
+  28, ALIJA, GOPNU, SAPLO
+  29, ALIJA, GOPNU, SAPLO
+
+# BAVOX (North) departures from 28/29
+sid = BAVOX
+  28, ALIJA, LOSDO, BAVOX
+  29, ALIJA, LOSDO, BAVOX
+
+# POSIG (SE) departures from 28/29
+sid = POSIG
+  28, ALIJA, KABGU, POSIG
+  29, ALIJA, KABGU, POSIG
+
+# SIBAD (South) departures from 28/29
+sid = SIBAD
+  28, ALIJA, NUBGU, SIBAD
+  29, ALIJA, NUBGU, SIBAD
+
+# VEMOX (East/NE) departures from 28/29
+sid = VEMOX
+  28, ALIJA, LOSDO, VEMOX
+  29, ALIJA, LOSDO, VEMOX
+
+# EASTERLY DEPARTURES (RWY 10/11)
+# -------------------------------------------------------
+# SAPLO (West) departures from 10/11
+sid = SAPLO
+  10, ALIJA, GOPNU, SAPLO
+  11, ALIJA, GOPNU, SAPLO
+
+# BAVOX (North) departures from 10/11
+sid = BAVOX
+  10, ALIJA, LOSDO, BAVOX
+  11, ALIJA, LOSDO, BAVOX
+
+# POSIG (SE) departures from 10/11
+sid = POSIG
+  10, ALIJA, KABGU, POSIG
+  11, ALIJA, KABGU, POSIG
+
+# SIBAD (South) departures from 10/11
+sid = SIBAD
+  10, ALIJA, NUBGU, SIBAD
+  11, ALIJA, NUBGU, SIBAD
+
+# VEMOX (East) departures from 10/11
+sid = VEMOX
+  10, ALIJA, LOSDO, VEMOX
+  11, ALIJA, LOSDO, VEMOX
+
+[approach]
+# Approaches (STARs ending in ILS intercept)
+# Format: beacon (fix name), runway, route_waypoints..., final_ILS_distance_nm
+# ----------------------------------------------------------
+# WESTERLY FLOW arrivals (landing RWY 28 and 29)
+
+# SAPLO STAR -> RWY 28 (from west/NW)
+# SAPLO -> FN911 -> ILS 28 intercept ~12nm
+approach = SAPLO, 28
+  SAPLO, 11000
+  AKBAN, 8000
+  FN911, 4000, 210
+  12, 3000, 200
+
+# SAPLO STAR -> RWY 29 (from west/NW)
+approach = SAPLO, 29
+  SAPLO, 11000
+  AKBAN, 8000
+  FN611, 4000, 210
+  12, 3000, 200
+
+# BAVOX STAR -> RWY 28 (from north)
+approach = BAVOX, 28
+  BAVOX, 15000
+  AKBAN, 9000
+  FN911, 4000, 210
+  12, 3000, 200
+
+# BAVOX STAR -> RWY 29 (from north)
+approach = BAVOX, 29
+  BAVOX, 15000
+  AKBAN, 9000
+  FN611, 4000, 210
+  12, 3000, 200
+
+# POSIG STAR -> RWY 28 (from SE)
+approach = POSIG, 28
+  POSIG, 15000
+  RIKMA, 9000
+  SIBAD, 7000
+  FN911, 4000, 210
+  12, 3000, 200
+
+# POSIG STAR -> RWY 29 (from SE)
+approach = POSIG, 29
+  POSIG, 15000
+  RIKMA, 9000
+  SIBAD, 7000
+  FN611, 4000, 210
+  12, 3000, 200
+
+# SIBAD STAR -> RWY 28 (from south)
+approach = SIBAD, 28
+  SIBAD, 11000
+  FN911, 4000, 210
+  12, 3000, 200
+
+# SIBAD STAR -> RWY 29 (from south)
+approach = SIBAD, 29
+  SIBAD, 11000
+  FN611, 4000, 210
+  12, 3000, 200
+
+# ----------------------------------------------------------
+# EASTERLY FLOW arrivals (landing RWY 10 and 11)
+
+# BAVOX STAR -> RWY 10 (from north)
+approach = BAVOX, 10
+  BAVOX, 15000
+  VEMOX, 10000
+  FS711, 4000, 220
+  12, 3000, 200
+
+# BAVOX STAR -> RWY 11 (from north)
+approach = BAVOX, 11
+  BAVOX, 15000
+  VEMOX, 10000
+  FS811, 4000, 220
+  12, 3000, 200
+
+# POSIG STAR -> RWY 10 (from SE)
+approach = POSIG, 10
+  POSIG, 15000
+  FS711, 5000, 220
+  12, 3000, 200
+
+# POSIG STAR -> RWY 11 (from SE)
+approach = POSIG, 11
+  POSIG, 15000
+  FS811, 5000, 220
+  12, 3000, 200
+
+# VEMOX STAR -> RWY 10 (from east)
+approach = VEMOX, 10
+  VEMOX, 11000
+  FS711, 4000, 220
+  12, 3000, 200
+
+# VEMOX STAR -> RWY 11 (from east)
+approach = VEMOX, 11
+  VEMOX, 11000
+  FS811, 4000, 220
+  12, 3000, 200
+
+# SAPLO STAR -> RWY 10 (from west, overhead routing)
+approach = SAPLO, 10
+  SAPLO, 15000
+  BAVOX, 10000
+  FS711, 4000, 220
+  12, 3000, 200
+
+# SAPLO STAR -> RWY 11 (from west, overhead routing)
+approach = SAPLO, 11
+  SAPLO, 15000
+  BAVOX, 10000
+  FS811, 4000, 220
+  12, 3000, 200
+
+[taxiways]
+# Very simplified taxi times (seconds) from runway to gate
+09 = 180
+10 = 180
+11 = 120
+27 = 180
+28 = 180
+29 = 120
+
+[frequencies]
+# ATC Frequencies
+approach = 126.35
+approach2 = 124.20
+tower = 118.10
+ground = 121.90
+atis = 126.40
+
+[background]
+# Coastline/border reference lines not applicable (landlocked)
+# Major road/landmark reference lines (approximate)
+# Delhi city center
+color = 150, 150, 150
+28.6500, 77.2300, 28.6500, 77.2500
+28.6500, 77.2500, 28.6300, 77.2500
+28.6300, 77.2500, 28.6300, 77.2300
+28.6300, 77.2300, 28.6500, 77.2300
+
+# Yamuna River approximate course
+color = 100, 150, 255
+28.3500, 77.3000
+28.4500, 77.2800
+28.5500, 77.2700
+28.6500, 77.2500
+28.7500, 77.1800
+28.8500, 77.1500
+29.0000, 77.0500
