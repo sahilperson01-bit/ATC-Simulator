@@ -1,0 +1,353 @@
+# VIDP - Indira Gandhi International Airport, New Delhi, India
+# Custom airport for Endless ATC
+# References: AIP India, AAI chart (runway layout), flightplandatabase.com/airport/VIDP
+#
+# RUNWAY LAYOUT (north to south, from chart):
+#   RWY 09/27   - 2810m x 46m  - hdg 091/271 - ILS 09=108.50, 27=110.50
+#   RWY 10/28   - 3813m x 45m  - hdg 105/285 - ILS 10=109.50, 28=110.30
+#   RWY 11L/29R - 3670m TORA / 4400m TODA x 45m - hdg 110/290 - ILS 11L=111.30, 29R=110.90
+#   RWY 11R/29L - 4110m x 60m  - hdg 110/290 - (parallel to 11L, southern strip)
+#
+# Elevation: 778 ft | Mag Var: 1.7E | Transition Alt: 14000 ft
+
+[airspace]
+radius = 80
+zoom = 1
+elevation = 778
+floor = 0
+descendaltitude = 11000
+ceiling = 24500
+above = 16000
+transitionaltitude = 14000
+speedrestriction = 15, 250
+usa = false
+metric = false
+automatic = true
+center = N28.33.31, E77.05.52
+magneticvar = -1.7
+beacons = SAPLO, N28.55.00, E76.32.00, 0, Saplo
+	BAVOX, N29.14.00, E77.31.00, 0, Bavox
+	POSIG, N28.13.00, E77.47.00, 0, Posig
+	SIBAD, N28.02.00, E76.48.00, 0, Sibad
+	AKBAN, N29.07.00, E76.50.00, 0, Akban
+	VEMOX, N28.48.00, E77.55.00, 0, Vemox
+	RIKMA, N27.51.00, E77.23.00, 0, Rikma
+	DEGOM, N28.55.00, E76.19.00, 0, Degom
+	ALIJA, N28.25.00, E76.59.00, 0, Alija
+	GOPNU, N28.41.00, E76.44.00, 0, Gopnu
+	LOSDO, N28.45.00, E77.27.00, 0, Losdo
+	KABGU, N28.11.00, E77.41.00, 0, Kabgu
+	NUBGU, N28.12.00, E76.37.00, 0, Nubgu
+	FN911, N28.33.00, E76.47.00, 0, Fn Nine One One
+	FS711, N28.33.00, E77.22.00, 0, Fs Seven One One
+handoff = 295, Delhi Control, Delhi Control, 132.0
+	035, Delhi Control, Delhi Control, 132.0
+	130, Delhi Control, Delhi Control, 132.0
+	200, Delhi Control, Delhi Control, 132.0
+	320, Delhi Control, Delhi Control, 132.0
+	065, Delhi Control, Delhi Control, 132.0
+	165, Delhi Control, Delhi Control, 132.0
+	280, Delhi Control, Delhi Control, 132.0
+boundary =
+	N27.30.00, E76.00.00
+	N27.30.00, E78.10.00
+	N29.50.00, E78.10.00
+	N29.50.00, E76.00.00
+	N27.30.00, E76.00.00
+# Yamuna River
+line1 =
+	N28.21.00, E77.18.00
+	N28.27.00, E77.16.48
+	N28.33.00, E77.16.12
+	N28.39.00, E77.15.00
+	N28.45.00, E77.10.48
+	N28.54.00, E77.09.00
+	N29.00.00, E77.03.00
+
+[airport1]
+name = Delhi Indira Gandhi Intl
+code = VIDP
+runways =
+	# RWY 09/27 - northernmost runway - 2810m x 46m - hdg 091/271
+	# Threshold 09 at west end, threshold 27 at east end
+	VIDPRWY09, 09, N28.33.54.00, E77.03.04.00, 91.4, 9219, 0, 0, 778, 3.0, 91.4, 3.0, 271.4, 0, 0, 0, 0, 118.10
+	# RWY 10/28 - second runway from north - 3813m x 45m - hdg 105/285
+	# Threshold 10 at west end, threshold 28 at east end
+	VIDPRWY10, 10, N28.33.21.00, E77.02.26.00, 104.7, 12511, 0, 0, 778, 3.0, 104.7, 3.0, 284.7, 0, 0, 0, 0, 118.10
+	# RWY 11L/29R - third runway - 3670m TORA / 4400m TODA x 45m - hdg 110/290
+	# Threshold 11L at west end (with RESA), threshold 29R at east end
+	VIDPRWY11L, 11L, N28.32.34.00, E77.01.52.00, 110.0, 12008, 0, 0, 778, 3.0, 110.0, 3.0, 290.0, 0, 0, 0, 0, 118.10
+	# RWY 11R/29L - southernmost runway - 4110m x 60m - hdg 110/290 (parallel to 11L)
+	# Offset ~370m south of 11L
+	VIDPRWY11R, 11R, N28.32.06.00, E77.01.44.00, 110.0, 13484, 0, 0, 778, 0, 0, 0, 0, 0, 0, 0, 0, 118.10
+climbaltitude = 4000
+sids =
+	SAPLO, N28.55.00, E76.32.00, Saplo
+	BAVOX, N29.14.00, E77.31.00, Bavox
+	POSIG, N28.13.00, E77.47.00, Posig
+	SIBAD, N28.02.00, E76.48.00, Sibad
+	VEMOX, N28.48.00, E77.55.00, Vemox
+	RIKMA, N27.51.00, E77.23.00, Rikma
+	DEGOM, N28.55.00, E76.19.00, Degom
+	AKBAN, N29.07.00, E76.50.00, Akban
+airlines =
+	AIC, 8, A320/A321/B788/B77W, Air India, w
+	IGO, 8, A320/A321/A20N, Indigo, w
+	SEJ, 5, B738/A320, Spicejet, w
+	AXB, 4, A320/B738, Express India, w
+	GOW, 3, A320/A321, Go Air, w
+	VTI, 3, A320/B788, Vistara, w
+	AKJ, 2, B38M/A20N, Akasa, w
+	BAW, 2, B77W/A388, Speedbird, nw
+	DLH, 2, A333/A343, Lufthansa, nw
+	UAE, 3, B77W/A388/B789, Emirates, w
+	QTR, 2, B77W/A359, Qatari, w
+	ETD, 2, B789/B77W, Etihad, w
+	KLM, 2, B77W/B789, K L M, nw
+	AFR, 1, A388/B77W, Airfrans, nw
+	SIA, 2, B77W/A359, Singapore, e
+	CPA, 1, B77W/A333, Cathay, e
+	THA, 1, B77W/A333, Thai, e
+	MAS, 1, A333/B738, Malaysian, e
+	JAL, 1, B789/B788, Japan Air, e
+	ANA, 1, B789/B788, All Nippon, e
+	FDX, 1, B77F, FedEx, e
+	BOX, 1, B752, D H L, e
+
+# ============================================================
+# WESTERLY FLOW ARRIVALS (Landing RWY 28/29 - heading ~285/284)
+# ============================================================
+
+[approach1]
+runway = VIDPRWY10, rev
+beacon = SAPLO, N28.55.00, E76.32.00, 0, Saplo
+route1 = 115
+	N28.55.00, E76.32.00, 13000
+	N29.07.00, E76.50.00, 11000, 250
+	N28.55.12, E76.46.48, 8000, 230
+	N28.43.12, E76.49.12, 6000, 210
+	N28.33.00, E76.47.00, 4000, 200
+	12.5, 3000, 190
+
+[approach2]
+runway = VIDPRWY11L, rev
+beacon = SAPLO, N28.55.00, E76.32.00, 0, Saplo
+route1 = 115
+	N28.55.00, E76.32.00, 13000
+	N29.07.00, E76.50.00, 11000, 250
+	N28.55.12, E76.46.48, 8000, 230
+	N28.43.12, E76.49.48, 6000, 210
+	N28.33.36, E76.47.30, 4000, 200
+	12.5, 3000, 190
+
+[approach3]
+runway = VIDPRWY10, rev
+beacon = BAVOX, N29.14.00, E77.31.00, 0, Bavox
+route1 = 215
+	N29.14.00, E77.31.00, 14000
+	N29.07.00, E76.50.00, 11000, 250
+	N28.55.12, E76.46.48, 8000, 230
+	N28.43.12, E76.49.12, 6000, 210
+	N28.33.00, E76.47.00, 4000, 200
+	12.5, 3000, 190
+
+[approach4]
+runway = VIDPRWY11L, rev
+beacon = BAVOX, N29.14.00, E77.31.00, 0, Bavox
+route1 = 215
+	N29.14.00, E77.31.00, 14000
+	N29.07.00, E76.50.00, 11000, 250
+	N28.55.12, E76.46.48, 8000, 230
+	N28.43.12, E76.49.48, 6000, 210
+	N28.33.36, E76.47.30, 4000, 200
+	12.5, 3000, 190
+
+[approach5]
+runway = VIDPRWY10, rev
+beacon = SIBAD, N28.02.00, E76.48.00, 0, Sibad
+route1 = 345
+	N28.02.00, E76.48.00, 11000
+	N28.15.00, E76.47.00, 9000, 240
+	N28.30.00, E76.47.00, 6000, 220
+	N28.33.00, E76.47.00, 4000, 200
+	12.5, 3000, 190
+
+[approach6]
+runway = VIDPRWY11L, rev
+beacon = SIBAD, N28.02.00, E76.48.00, 0, Sibad
+route1 = 345
+	N28.02.00, E76.48.00, 11000
+	N28.15.00, E76.47.00, 9000, 240
+	N28.30.00, E76.47.24, 6000, 220
+	N28.33.36, E76.47.30, 4000, 200
+	12.5, 3000, 190
+
+[approach7]
+runway = VIDPRWY10, rev
+beacon = DEGOM, N28.55.00, E76.19.00, 0, Degom
+route1 = 95
+	N28.55.00, E76.19.00, 13000
+	N28.55.00, E76.40.00, 10000, 240
+	N29.07.00, E76.50.00, 9000, 250
+	N28.55.12, E76.46.48, 7000, 230
+	N28.43.12, E76.49.12, 5000, 210
+	N28.33.00, E76.47.00, 4000, 200
+	12.5, 3000, 190
+
+[approach8]
+runway = VIDPRWY11L, rev
+beacon = DEGOM, N28.55.00, E76.19.00, 0, Degom
+route1 = 95
+	N28.55.00, E76.19.00, 13000
+	N28.55.00, E76.40.00, 10000, 240
+	N29.07.00, E76.50.00, 9000, 250
+	N28.55.12, E76.46.48, 7000, 230
+	N28.43.12, E76.49.48, 5000, 210
+	N28.33.36, E76.47.30, 4000, 200
+	12.5, 3000, 190
+
+[approach9]
+runway = VIDPRWY10, rev
+beacon = RIKMA, N27.51.00, E77.23.00, 0, Rikma
+route1 = 340
+	N27.51.00, E77.23.00, 12000
+	N28.06.00, E77.09.00, 9000, 240
+	N28.21.00, E76.58.48, 7000, 220
+	N28.33.00, E76.47.00, 4500, 200
+	12.5, 3000, 190
+
+[approach10]
+runway = VIDPRWY11L, rev
+beacon = RIKMA, N27.51.00, E77.23.00, 0, Rikma
+route1 = 340
+	N27.51.00, E77.23.00, 12000
+	N28.06.00, E77.09.00, 9000, 240
+	N28.21.00, E76.59.00, 7000, 220
+	N28.33.36, E76.47.30, 4500, 200
+	12.5, 3000, 190
+
+# ============================================================
+# EASTERLY FLOW ARRIVALS (Landing RWY 09/10/11 - heading ~091/105/104)
+# ============================================================
+
+[approach11]
+runway = VIDPRWY10
+beacon = POSIG, N28.13.00, E77.47.00, 0, Posig
+route1 = 295
+	N28.13.00, E77.47.00, 12000
+	N28.18.00, E77.33.00, 9000, 230
+	N28.25.12, E77.27.00, 7000, 210
+	N28.33.00, E77.22.00, 4500, 200
+	12.5, 3000, 190
+
+[approach12]
+runway = VIDPRWY11L
+beacon = POSIG, N28.13.00, E77.47.00, 0, Posig
+route1 = 295
+	N28.13.00, E77.47.00, 12000
+	N28.18.00, E77.33.00, 9000, 230
+	N28.25.12, E77.27.00, 7000, 210
+	N28.33.36, E77.23.00, 4500, 200
+	12.5, 3000, 190
+
+[approach13]
+runway = VIDPRWY10
+beacon = VEMOX, N28.48.00, E77.55.00, 0, Vemox
+route1 = 260
+	N28.48.00, E77.55.00, 12000
+	N28.39.00, E77.39.00, 9000, 230
+	N28.34.48, E77.27.00, 6000, 210
+	N28.33.00, E77.22.00, 4500, 200
+	12.5, 3000, 190
+
+[approach14]
+runway = VIDPRWY11L
+beacon = VEMOX, N28.48.00, E77.55.00, 0, Vemox
+route1 = 260
+	N28.48.00, E77.55.00, 12000
+	N28.39.00, E77.39.00, 9000, 230
+	N28.34.48, E77.27.00, 6000, 210
+	N28.33.36, E77.23.00, 4500, 200
+	12.5, 3000, 190
+
+[approach15]
+runway = VIDPRWY10
+beacon = BAVOX, N29.14.00, E77.31.00, 0, Bavox
+route1 = 195
+	N29.14.00, E77.31.00, 14000
+	N28.54.00, E77.36.00, 11000, 250
+	N28.39.00, E77.30.00, 8000, 230
+	N28.33.00, E77.22.00, 5000, 210
+	12.5, 3000, 190
+
+[approach16]
+runway = VIDPRWY11L
+beacon = BAVOX, N29.14.00, E77.31.00, 0, Bavox
+route1 = 195
+	N29.14.00, E77.31.00, 14000
+	N28.54.00, E77.36.00, 11000, 250
+	N28.39.00, E77.30.00, 8000, 230
+	N28.33.36, E77.23.00, 5000, 210
+	12.5, 3000, 190
+
+[approach17]
+runway = VIDPRWY09
+beacon = POSIG, N28.13.00, E77.47.00, 0, Posig
+route1 = 295
+	N28.13.00, E77.47.00, 12000
+	N28.18.00, E77.33.00, 9000, 230
+	N28.25.12, E77.27.00, 7000, 210
+	N28.32.34, E77.21.00, 4500, 200
+	12.5, 3000, 190
+
+[approach18]
+runway = VIDPRWY09
+beacon = VEMOX, N28.48.00, E77.55.00, 0, Vemox
+route1 = 260
+	N28.48.00, E77.55.00, 12000
+	N28.39.00, E77.39.00, 9000, 230
+	N28.34.00, E77.25.00, 6000, 210
+	N28.32.34, E77.21.00, 4500, 200
+	12.5, 3000, 190
+
+[approach19]
+runway = VIDPRWY09
+beacon = BAVOX, N29.14.00, E77.31.00, 0, Bavox
+route1 = 195
+	N29.14.00, E77.31.00, 14000
+	N28.54.00, E77.36.00, 11000, 250
+	N28.39.00, E77.28.00, 8000, 230
+	N28.32.34, E77.21.00, 5000, 210
+	12.5, 3000, 190
+
+[approach20]
+runway = VIDPRWY09
+beacon = RIKMA, N27.51.00, E77.23.00, 0, Rikma
+route1 = 340
+	N27.51.00, E77.23.00, 12000
+	N28.06.00, E77.18.00, 9000, 240
+	N28.20.00, E77.20.00, 7000, 220
+	N28.32.34, E77.21.00, 4500, 200
+	12.5, 3000, 190
+
+[approach21]
+runway = VIDPRWY09
+beacon = SAPLO, N28.55.00, E76.32.00, 0, Saplo
+route1 = 115
+	N28.55.00, E76.32.00, 13000
+	N29.07.00, E76.50.00, 11000, 250
+	N29.14.00, E77.31.00, 10000, 250
+	N28.54.00, E77.36.00, 8000, 230
+	N28.39.00, E77.28.00, 6000, 210
+	N28.32.34, E77.21.00, 4500, 200
+	12.5, 3000, 190
+
+[approach22]
+runway = VIDPRWY09
+beacon = SIBAD, N28.02.00, E76.48.00, 0, Sibad
+route1 = 345
+	N28.02.00, E76.48.00, 11000
+	N28.02.00, E77.10.00, 9000, 240
+	N28.10.00, E77.20.00, 7000, 220
+	N28.32.34, E77.21.00, 4500, 200
+	12.5, 3000, 190
