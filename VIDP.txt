@@ -1,0 +1,140 @@
+# Delhi Indira Gandhi International Airport (VIDP/DEL)
+# Endless ATC Configuration
+# Based on real-world data (2025)
+# Includes all active passenger and cargo airlines
+
+[airspace]
+radius = 35
+elevation = 777
+metric = false
+center = N28.5665, E77.1031
+magneticvar = 0.5
+beacons =
+	DPN, N28.56650, E77.10310, 0, Delhi VOR
+	AGR, N27.15580, E77.96080, 0, Agra
+	ROK, N28.83330, E76.88000, 0, Rohtak
+	KNU, N26.77500, E80.88500, 0, Kanpur
+	JIP, N26.82500, E75.80200, 0, Jaipur
+	MTR, N29.00000, E77.70000, 0, Meerut
+	AMB, N28.17830, E77.51000, 0, Ambedkar Nagar
+	GGN, N28.45000, E77.03000, 0, Gurgaon
+	FDB, N28.97500, E77.17000, 0, Faridabad
+	PNP, N28.45830, E77.73330, 0, Palwal
+
+line1 =
+	N29.55000, E76.30000
+	N29.75000, E76.80000
+	N29.85000, E77.20000
+	N29.80000, E77.70000
+	N29.60000, E78.10000
+	N29.20000, E78.30000
+	N28.80000, E78.20000
+	N28.40000, E78.00000
+	N28.00000, E77.80000
+	N27.70000, E77.50000
+	N27.50000, E77.00000
+	N27.55000, E76.50000
+	N27.80000, E76.10000
+	N28.20000, E75.90000
+	N28.70000, E75.80000
+	N29.10000, E76.00000
+	N29.40000, E76.20000
+	N29.55000, E76.30000
+
+line2 =
+	N28.56650, E77.10310
+	N28.65000, E77.20000
+	N28.75000, E77.15000
+	N28.70000, E77.05000
+
+line3 =
+	N28.40000, E77.00000
+	N28.35000, E77.10000
+	N28.45000, E77.20000
+	N28.55000, E77.15000
+
+[airport1]
+name = Indira Gandhi International Airport
+code = VIDP
+runways =
+	rwy1, 09,  N28.5622, E77.0614, 91.0,  9239,  0, 0, 10
+	rwy2, 10,  N28.5560, E77.0680, 101.0, 12510, 0, 0, 10
+	rwy3, 11L, N28.5490, E77.0530, 111.0, 14436, 0, 0, 12
+	rwy4, 11R, N28.5440, E77.0470, 111.0, 14530, 0, 0, 12
+airlines =
+	igi, 25, a319/a320/a20n/a321/a21n/a332/a333/a359/b772/b77w/b788/b789/b78x, air india, nswe
+	iax, 10, a320/a20n/a321/a21n, air india express, nswe
+	ige, 8,  a319/a320/a20n/a321/a21n, air india regional, ns
+	ige, 8,  a319/a320/a20n/a321/a21n, indigo, ns
+	ink, 30, a319/a320/a20n/a321/a21n/a32n/a339, indigo, nswe
+	sgt, 6,  b737/b738/b38m/b39m/dh8d, spicejet, nswe
+	qpu, 5,  b737/b738/b38m, akasa, nswe
+	iak, 5,  a320/a20n/a321/a21n, akasa air, nswe
+	aal, 1,  b772/b77w/b789, american, n
+	afl, 1,  a332/a333/a359, aeroflot, n
+	abq, 1,  a320/a321, air arabia, w
+	aca, 1,  b788/b789/b77l, air canada, n
+	afr, 1,  a332/a333/a359/a388, air france, w
+	aim, 1,  a332/a343/a359, air mauritius, s
+	ana, 1,  b788/b789/b78x, all nippon, e
+	aal, 1,  b772/b789, american, n
+	aar, 1,  a333/a359/b744, asiana, e
+	axb, 1,  a320/a20n/a321, airasia india, s
+	azj, 1,  a320/a321, azerbaijan, w
+	bat, 1,  b738/b39m/b3xm, batik air, s
+	blv, 1,  b737/b738, belavia, n
+	bha, 1,  a320/at72, bhutan airlines, n
+	baw, 1,  b789/b77w/b744/b788, speedbird, w
+	cpa, 1,  a333/a359/b748/b77w, cathay, e
+	ces, 1,  a332/a333/a359/b77w, china eastern, e
+	dal, 1,  a332/a359/b772/b77w, delta, n
+	duk, 1,  at75/at76/a319, drukair, n
+	eth, 1,  a359/b787/b788/b789/b77l, ethiopian, w
+	etd, 1,  a332/a333/a359/b77l/b77w/b789, etihad, w
+	uae, 1,  a332/a388/b772/b773/b77w/b78x, emirates, w
+	fdb, 1,  b738/b39m/b3xm, flydubai, w
+	fin, 1,  a333/a359, finnair, w
+	fne, 1,  a320/a321, flynas, w
+	gia, 1,  a333/b738/b77w, indonesia, s
+	gfa, 1,  a320/a321/a20n/a21n/a332, gulf air, w
+	iqa, 1,  b738/b739, iraqi airways, w
+	aza, 1,  a333/a359/b772, ita airways, w
+	jal, 1,  b788/b789/b78x, japan air, e
+	jaw, 1,  a320/a321, jazeera, w
+	kam, 1,  b737/b738, kam air, w
+	klm, 1,  b772/b77w/b789/b78x, klm, n
+	kal, 1,  a333/b738/b748/b77l, korean air, e
+	kac, 1,  a333/b738, kuwait airways, w
+	lot, 1,  b788/b789, polish, n
+	dlh, 1,  a333/a359/a388/b748, lufthansa, w
+	irm, 1,  a330/a343/b742/b744, mahan air, w
+	mas, 1,  a332/a333/b738/b38m, Malaysian, s
+	rna, 1,  at72/at75, myanmar national, s
+	ncn, 1,  at72, nepal airlines, n
+	oma, 1,  a332/a333/b738, oman air, w
+	qfa, 1,  a332/a333/b789/b78x, qantas, s
+	qtr, 1,  a332/a333/a359/b77l/b77w/b789, qatari, w
+	svg, 1,  a320/a321, somon air, n
+	sva, 1,  a332/a333/a359/b742/b744/b77l, saudia, w
+	sia, 1,  a333/a359/a388/b772/b77w/b78x, singapore, s
+	alk, 1,  a332/a333, sri lankan, s
+	swr, 1,  a333/a359/b77w, swiss, w
+	tha, 1,  a332/a333/a359/b772/b77w, thai, s
+	tlm, 1,  a320/a321/b738, thai lion, s
+	xax, 1,  a333/a339, thai airasia x, s
+	thy, 1,  a332/a333/a359/b77w/b789, turkish, w
+	tmk, 1,  b738/b752/b762, turkmenistan, n
+	ual, 1,  b772/b77w/b788/b789/b78x, united, n
+	uzb, 1,  a320/a321/b763, uzbek, n
+	hvn, 1,  a321/a332/a20n, vietnam airlines, s
+	vjc, 1,  a320/a321, vietjet, s
+	vir, 1,  a332/a333/a339/a35k/b789, virgin, w
+	# Cargo
+	fco, 1,  b744/b748/b77l, fedex, nw
+	ups, 1,  b744/b748/b752/b763, u p s, new
+	cao, 1,  b744/b752/b77l, air china freight, e
+	abw, 1,  b742/b743/b744/b748/b77l, air bridge cargo, nw
+	blf, 1,  b744/b77l, blue dart, ns
+	gti, 1,  b744/b748/b763, giant, new
+	sgf, 1,  b744/b748, singapore cargo, s
+	msc, 1,  b744/a332, mas cargo, s
